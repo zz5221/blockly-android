@@ -122,6 +122,7 @@ public class BlockRecyclerViewHelper {
      *
      * @param category The category to display blocks for.
      */
+    //对每个Tab页下的Blocks进行展示
     public void setCurrentCategory(@Nullable BlocklyCategory category) {
         if (mCurrentCategory == category) {
             return;
@@ -253,6 +254,7 @@ public class BlockRecyclerViewHelper {
                 Block block = ((BlocklyCategory.BlockItem) item).getBlock();
                 BlockGroup bg = mHelper.getParentBlockGroup(block);
                 if (bg == null) {
+                    //展示每一个Block
                     bg = mHelper.getBlockViewFactory().buildBlockGroupTree(
                             block, mConnectionManager, mTouchHandler);
                 } else {

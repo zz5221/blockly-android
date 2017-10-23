@@ -102,6 +102,7 @@ public class CategoryView extends RelativeLayout {
      *
      * @param topLevelCategory The top-level category in the toolbox.
      */
+    //对Tab页的item进行绘制
     public void setContents(@Nullable final BlocklyCategory topLevelCategory) {
         mRootCategory = topLevelCategory;
         if (topLevelCategory == null) {

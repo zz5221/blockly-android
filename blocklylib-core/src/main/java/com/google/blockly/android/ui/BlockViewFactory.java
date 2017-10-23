@@ -181,6 +181,7 @@ public abstract class BlockViewFactory<BlockView extends com.google.blockly.andr
      *
      * @return A view for the block.
      */
+    //建造Block块
     public final BlockGroup buildBlockGroupTree(Block rootBlock,
                                           ConnectionManager connectionManager,
                                           BlockTouchHandler touchHandler) {
@@ -200,6 +201,7 @@ public abstract class BlockViewFactory<BlockView extends com.google.blockly.andr
      *
      * @return A view for the block and all its descendants.
      */
+    //制作Block Tree
     public final BlockView buildBlockViewTree(Block block, BlockGroup parentGroup,
                                         ConnectionManager connectionManager,
                                         BlockTouchHandler touchHandler) {
@@ -219,6 +221,7 @@ public abstract class BlockViewFactory<BlockView extends com.google.blockly.andr
         Block next = block.getNextBlock();
         if (next != null) {
             // Recursively calls buildBlockViewTree(..) for the rest of the sequence.
+            //递归式调用此方法，来对Block进行建造
             buildBlockViewTree(next, parentGroup, connectionManager, touchHandler);
         }
 
@@ -430,7 +433,7 @@ public abstract class BlockViewFactory<BlockView extends com.google.blockly.andr
         }
         return mVariableAdapter;
     }
-
+    //对Block的input项进行制作，详情参考Block的自定义制作过程。
     @NonNull
     protected List<InputView> buildInputViews(
             Block block, ConnectionManager connectionManager, BlockTouchHandler touchHandler) {

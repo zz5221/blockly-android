@@ -125,6 +125,7 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
         int id = item.getItemId();
 
         if (id == R.id.action_save) {
+            //TODO 保存工作空间
             onSaveWorkspace();
             return true;
         } else if (id == R.id.action_load) {
@@ -251,8 +252,11 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
             throw new IllegalStateException("BlocklyActivityHelper is null. "
                     + "onCreateActivityHelper must return a instance.");
         }
+        //制作Block
         resetBlockFactory();  // Initial load of block definitions, extensions, and mutators.
+        //配置种类工厂
         configureCategoryFactories();  // After BlockFactory; before Toolbox
+        // 展示Toolbox
         reloadToolbox();
 
         // Load the workspace.
@@ -645,6 +649,7 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
     /**
      * Reloads the toolbox contents using the path provided by {@link #getToolboxContentsXmlPath()}.
      */
+    //展示toolBox的各种各样的Block
     protected void reloadToolbox() {
         mBlocklyActivityHelper.reloadToolbox(getToolboxContentsXmlPath());
     }
@@ -656,6 +661,7 @@ public abstract class AbstractBlocklyActivity extends AppCompatActivity {
      * @throws IOException If there is a fundamental problem with the input.
      * @throws BlockLoadingException If the definition is malformed.
      */
+    //展示屏幕左侧的Blocks
     protected void resetBlockFactory() {
         mBlocklyActivityHelper.resetBlockFactory(
                 getBlockDefinitionsJsonPaths());

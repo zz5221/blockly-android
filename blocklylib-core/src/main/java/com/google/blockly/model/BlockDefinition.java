@@ -71,8 +71,9 @@ public final class BlockDefinition {
      * @param json The JSON object with the definition.
      * @throws BlockLoadingException If JSON does not include expected attributes.
      */
+    //将json 对象转换为BlockDefinition 对象
     public BlockDefinition(JSONObject json) throws BlockLoadingException {
-        mJson = json;
+            mJson = json;
 
         // Validate or create type id.
         String tmpName = mJson.optString("type");

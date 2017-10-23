@@ -298,6 +298,7 @@ public class Workspace {
      * @throws BlocklySerializerException if there was a failure while serializing.
      */
     public void serializeToXml(OutputStream os) throws BlocklySerializerException {
+        //TODO 将mRootBlocks(工作空间存放的BLOCK的List 文件写入到xml文件中)此处可以替换成八个舵机的数值
         BlocklyXmlHelper.writeToXml(mRootBlocks, os, IOOptions.WRITE_ALL_DATA);
     }
 

@@ -43,6 +43,7 @@ import java.util.List;
 /**
  * Draws a block and handles laying out all its inputs/fields.
  */
+//  绘制一个Block 并掌握布置所有的Input和Fields
 @SuppressLint("ViewConstructor")
 public class BlockView extends AbstractBlockView<InputView> {
     private static final boolean DEBUG = false;
@@ -233,7 +234,7 @@ public class BlockView extends AbstractBlockView<InputView> {
             inputView.layout(rowFrom, rowTop, rowFrom + inputViewWidth,
                     rowTop + inputView.getMeasuredHeight());
         }
-
+        //绘制Block
         layoutPatchesAndConnectors();
         updateConnectorLocations();
     }

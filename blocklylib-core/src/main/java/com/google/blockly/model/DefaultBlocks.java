@@ -62,6 +62,7 @@ public final class DefaultBlocks {
      * not load the Extension and related classes if never called.
      * @return The map of default extensions, keyed by extension id.
      */
+    //获取全部的Blocks
     public static List<String> getAllBlockDefinitions() {
         if (ALL_BLOCK_DEFINITIONS == null) {
             ALL_BLOCK_DEFINITIONS = Collections.unmodifiableList(Arrays.asList(

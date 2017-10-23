@@ -84,6 +84,7 @@ public class FlyoutController {
                 // Clicked the open category, close it if closeable.
                 closeToolbox();
             } else {
+                //当用户点击每个Tab页时，返回的回调函数，展示每个Tab页下的Blocks
                 setToolboxCategory(category);
                 closeTrash();
             }

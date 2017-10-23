@@ -656,6 +656,7 @@ public class BlocklyController {
     /**
      * Recursively initialize views for all the blocks in the model and add them to the view.
      */
+    //递归式的将Blocks添加到View当中去
     public void initBlockViews() {
         if (mWorkspaceView != null) {
             List<Block> rootBlocks = mWorkspace.getRootBlocks();

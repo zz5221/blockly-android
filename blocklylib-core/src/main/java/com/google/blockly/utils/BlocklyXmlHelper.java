@@ -103,6 +103,7 @@ public final class BlocklyXmlHelper {
      * @throws BlockLoadingException If any error occurs with the input. It may wrap an IOException
      *                               or XmlPullParserException as a root cause.
      */
+    //对xmL文件进行解析，并生成BlocklyCategory
     public static BlocklyCategory loadToolboxFromXml(InputStream is, BlockFactory blockFactory,
                                                      String workspaceId)
             throws BlockLoadingException {

@@ -143,6 +143,7 @@ public class BlocklyActivityHelper {
         }
 
         mWorkspaceHelper = new WorkspaceHelper(activity);
+        //制作Block的工厂类并制作出Block
         mBlockViewFactory = onCreateBlockViewFactory(mWorkspaceHelper);
         mClipDataHelper = onCreateClipDataHelper();
         mCodeGeneratorManager = new CodeGeneratorManager(activity);
@@ -193,7 +194,9 @@ public class BlocklyActivityHelper {
      */
     public void saveWorkspaceToAppDir(String filename)
             throws FileNotFoundException, BlocklySerializerException{
+        //TODO 得到用户工作空间
         Workspace workspace = mWorkspaceFragment.getWorkspace();
+        //TODO 将存储的名字作为参数进行传入
         workspace.serializeToXml(mActivity.openFileOutput(filename, Context.MODE_PRIVATE));
     }
 
@@ -471,6 +474,7 @@ public class BlocklyActivityHelper {
      * @param helper The Workspace helper for this activity.
      * @return The {@link BlockViewFactory} used by all fragments in this activity.
      */
+    //制造Block的工厂模式，利用反射原理找到继承与BlockViewFactory的工厂类
     public BlockViewFactory onCreateBlockViewFactory(WorkspaceHelper helper) {
         try {
             @SuppressWarnings("unchecked")
@@ -635,6 +639,7 @@ public class BlocklyActivityHelper {
      * @param blockDefinitionsJsonPaths The list of definition asset paths.
      * @throws IllegalStateException On any issues with the input.
      */
+    //从assets文件夹中获取Block的存储路径，即jsonWEN
     public void resetBlockFactory(
             @Nullable List<String> blockDefinitionsJsonPaths) {
         AssetManager assets = mActivity.getAssets();
@@ -660,6 +665,7 @@ public class BlocklyActivityHelper {
      * @param toolboxContentsXmlPath The asset path to the toolbox XML
      * @throws IllegalStateException If error occurs during loading.
      */
+    //读取toolbox.xml文件,并展示
     public void reloadToolbox(String toolboxContentsXmlPath) {
         AssetManager assetManager = mActivity.getAssets();
         BlocklyController controller = getController();

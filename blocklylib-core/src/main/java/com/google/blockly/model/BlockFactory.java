@@ -118,6 +118,7 @@ public class BlockFactory {
      * @throws IOException If there is a fundamental problem with the input.
      * @throws BlockLoadingException If the definition is malformed.
      */
+    //TODO 书签：将Blocklyjson数据以流的方式进行读入
     public int addJsonDefinitions(InputStream jsonStream)
             throws IOException, BlockLoadingException {
         // Read stream as single string.
@@ -135,6 +136,7 @@ public class BlockFactory {
      * @throws IOException If there is a fundamental problem with the input.
      * @throws BlockLoadingException If the definition is malformed.
      */
+    // 将Block的定义进行添加
     public int addJsonDefinitions(String jsonString) throws IOException, BlockLoadingException {
         // Parse JSON first, avoiding side effects (partially added file) in the case of an error.
         List<BlockDefinition> defs;

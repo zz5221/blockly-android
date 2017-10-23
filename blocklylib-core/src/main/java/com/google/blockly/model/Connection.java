@@ -29,6 +29,7 @@ import java.lang.annotation.RetentionPolicy;
  * Describes a connection on a Block. This can be a previous/next connection, an output, or
  * the connection on an {@link Input}.
  */
+//Block与Block之间的连接管理类
 public class Connection implements Cloneable {
     private static final String TAG = "Connection";
     /**

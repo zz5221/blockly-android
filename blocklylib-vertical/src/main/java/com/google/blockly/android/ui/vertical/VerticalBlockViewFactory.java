@@ -60,6 +60,7 @@ public class VerticalBlockViewFactory extends BlockViewFactory<BlockView, InputV
      * @param helper The {@link WorkspaceHelper} associated with the workspace.
      * @param workspaceTheme The theme resource id for the block styles.
      */
+    //设置Blockly的制作工厂，可以支持Theme制作
     public VerticalBlockViewFactory(Context context, WorkspaceHelper helper, int workspaceTheme) {
         super(context, helper);
 

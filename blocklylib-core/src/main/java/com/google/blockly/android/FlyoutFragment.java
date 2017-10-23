@@ -191,7 +191,9 @@ public class FlyoutFragment extends Fragment implements BlockListUI {
      * @param category The {@link BlocklyCategory} with blocks to display.
      */
     public void setCurrentCategory(@NonNull BlocklyCategory category) {
+        //用于展示每个Tab页下的Blockl的RecyclerHelper。
         mRecyclerHelper.setCurrentCategory(category);
+        //更新每个Tab页下的BlockS的背景颜色
         updateCategoryColors(category);
         // TODO(#80): Add animation hooks for subclasses.
         if (category == null) {

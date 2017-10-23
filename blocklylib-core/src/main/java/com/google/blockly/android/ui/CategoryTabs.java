@@ -43,6 +43,7 @@ import java.util.List;
  * Additionally, the tab labels can be rotated using the {@link Rotation} constants. All tabs will
  * be rotated in the same direction.
  */
+//左侧的Tab页签
 public class CategoryTabs extends RecyclerView {
     public static final String TAG = "CategoryTabs";
 
@@ -143,6 +144,7 @@ public class CategoryTabs extends RecyclerView {
      *
      * @param categories The list of {@link BlocklyCategory}s used to populate the tab labels.
      */
+    //刷新数据
     public void setCategories(List<BlocklyCategory> categories) {
         mCategories.clear();
         mCategories.addAll(categories);
@@ -236,6 +238,7 @@ public class CategoryTabs extends RecyclerView {
             holder.mLabel.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View label) {
+                    //点击每一个Tab页时触发的Click操作
                     onCategoryClicked(category);
                 }
             });
