@@ -46,7 +46,7 @@ public class DevTestsActivity extends BlocklySectionsActivity {
     private static final String TAG = "DevTestsActivity";
 
     public static final String SAVE_FILENAME = "dev_tests_workspace.xml";
-
+    //得到系统默认的Block
     private static final List<String> BLOCK_DEFINITIONS = Collections.unmodifiableList(
             Arrays.asList(
                     DefaultBlocks.LIST_BLOCKS_PATH,
